@@ -24,5 +24,10 @@ internal class Program
                 Console.WriteLine($"Массив {item.GetType()} с удаленными дубликатами");
                 item.Print();
             }
+
+        
+                IPrinter daysOfWeekPrinter = new DaysOfWeekPrinter();
+                daysOfWeekPrinter.Print();
+
         }
     }
