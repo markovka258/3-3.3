@@ -7,8 +7,6 @@ public abstract class ArrayBase : IArray, IPrinter
 
     public abstract void ArrRand();
 
-    public abstract void RemoveDuplicates();
-
     public abstract double GetAverage();
 
     public abstract void Print();

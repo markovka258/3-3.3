@@ -20,14 +20,21 @@ internal class Program
                 Console.WriteLine($"Элементы массива {item.GetType()}");
                 item.Print();
                 Console.WriteLine($"Среднее значение {item.GetType()} массива {item.GetAverage()}");
-                item.RemoveDuplicates();
-                Console.WriteLine($"Массив {item.GetType()} с удаленными дубликатами");
-                item.Print();
             }
 
-        
-                IPrinter daysOfWeekPrinter = new DaysOfWeekPrinter();
-                daysOfWeekPrinter.Print();
+            Console.WriteLine($"Массив {one.GetType()} с удаленными дубликатами");
+            one.Print();
+
+            Console.WriteLine("Массив 2 змейкой:");
+            two.InReverse();
+
+            foreach (double i in three.GetAverages())
+            {
+                Console.WriteLine($"Среднее для вложенного в array3 массива: {i}");
+            }
+
+            IPrinter daysOfWeekPrinter = new DaysOfWeekPrinter();
+            daysOfWeekPrinter.Print();
 
         }
     }

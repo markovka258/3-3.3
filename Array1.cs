@@ -73,7 +73,7 @@ sealed class Array1 : ArrayBase
         }
     }
 
-    public override void RemoveDuplicates()
+    public void RemoveDuplicates()
     {
         int[] a = _array;
         int count = 0;

@@ -81,41 +81,6 @@ sealed class Array2 : ArrayBase
         }
     }
 
-    public override void RemoveDuplicates()
-{
-    int[,] a = array;
-    int rows = a.GetLength(0);
-    int columns = a.GetLength(1);
-
-    int[,] result = new int[rows, columns];
-    int count = 0;
-
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < columns; j++)
-        {
-            bool isDuplicate = false;
-
-            for (int k = 0; k < count; k++)
-            {
-                if (a[i, j] == result[k / columns, k % columns])
-                {
-                    isDuplicate = true;
-                    break;
-                }
-            }
-
-            if (!isDuplicate)
-            {
-                result[count / columns, count % columns] = a[i, j];
-                count++;
-            }
-        }
-    }
-
-    array = result;
-}
-
     public override double GetAverage()
     {
         int sum = 0;
@@ -131,6 +96,32 @@ sealed class Array2 : ArrayBase
         }
 
         return (double)sum / count;
+    }
+
+    public void InReverse()
+    {
+        int[,] ar = array;
+        int rows = ar.GetLength(0);
+        int columns = ar.GetLength(1);
+
+        for (int i = 0; i < rows; i++)
+        {
+            if (i % 2 == 0)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.Write(ar[i, j] + " ");
+                }
+            }
+            else
+            {
+                for (int j = columns - 1; j >= 0; j--)
+                {
+                    Console.Write(ar[i, j] + " ");
+                }
+            }
+            Console.WriteLine();
+        }
     }
 
     public override void Print()

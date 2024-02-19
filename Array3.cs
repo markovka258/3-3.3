@@ -93,12 +93,24 @@ sealed class Array3 : ArrayBase
         }
     }
 
-    public override void RemoveDuplicates()
+    public double[] GetAverages()
     {
-        for (int i = 0; i < array.Length; i++)
+        int[][] array3 = array;
+        double[] averages = new double[array3.Length];
+
+        for (int i = 0; i < array3.Length; i++)
         {
-            array[i] = array[i].Distinct().ToArray();
+            int sum = 0;
+
+            for (int j = 0; j < array3[i].Length; j++)
+            {
+                sum += array3[i][j];
+            }
+
+            averages[i] = (double)sum / (double)array3[i].Length;
         }
+
+        return averages;
     }
 
     public override double GetAverage()
