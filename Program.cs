@@ -5,23 +5,26 @@ internal class Program
         static void Main()
         {
             Array1 one = new Array1();
-
             Array2 two = new Array2();
-
             Array3 three = new Array3();
-  
-            IArray[] arrays = new IArray[3]
+            DaysOfWeekPrinter daysOfWeekPrinter = new DaysOfWeekPrinter();
+
+            IPrinter[] printers = new IPrinter[]
             {
-                one, two, three
+                one, two, three, daysOfWeekPrinter
             };
 
-            foreach(IArray item in arrays)
+            foreach (IPrinter printer in printers)
             {
-                Console.WriteLine($"Элементы массива {item.GetType()}");
-                item.Print();
-                Console.WriteLine($"Среднее значение {item.GetType()} массива {item.GetAverage()}");
-            }
+                Console.WriteLine($"Элементы массива {printer.GetType()}");
+                printer.Print();
 
+                if (printer is IArray array)
+                {
+                    Console.WriteLine($"Среднее значение {array.GetType()} массива {array.GetAverage()}");
+                }
+            }
+            
             Console.WriteLine($"Массив {one.GetType()} с удаленными дубликатами");
             one.Print();
 
@@ -32,9 +35,5 @@ internal class Program
             {
                 Console.WriteLine($"Среднее для вложенного в array3 массива: {i}");
             }
-
-            IPrinter daysOfWeekPrinter = new DaysOfWeekPrinter();
-            daysOfWeekPrinter.Print();
-
         }
     }

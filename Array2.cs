@@ -25,7 +25,7 @@ sealed class Array2 : ArrayBase
         InitializeArray();
     }
 
-    public override void InitializeArray()
+    protected override void InitializeArray()
     {
         Console.Write("Enter 'true' for user input or 'false' for random input: ");
         string userInput = Console.ReadLine();
@@ -49,7 +49,7 @@ sealed class Array2 : ArrayBase
         }
     }
 
-    public override void ArrUsInp()
+    protected override void ArrUsInp()
     {
         for (int i = 0; i < array.GetLength(0); i++)
         {
@@ -70,7 +70,7 @@ sealed class Array2 : ArrayBase
         }
     }
 
-    public override void ArrRand()
+    protected override void ArrRand()
     {
         for (int i = 0; i < array.GetLength(0); i++)
         {

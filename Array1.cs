@@ -22,7 +22,7 @@ sealed class Array1 : ArrayBase
         InitializeArray();
     }
 
-    public override void InitializeArray()
+    protected override void InitializeArray()
     {
         Console.Write("Enter 'true' for user input or 'false' for random input: ");
         string userInput = Console.ReadLine();
@@ -46,7 +46,7 @@ sealed class Array1 : ArrayBase
         }
     }
 
-    public override void ArrUsInp()
+    protected override void ArrUsInp()
     {
         Console.WriteLine($"Введите {_array.Length} чисел:");
 
@@ -65,7 +65,7 @@ sealed class Array1 : ArrayBase
         }
     }
 
-    public override void ArrRand()
+    protected override void ArrRand()
     {
         for (int i = 0; i < _array.Length; i++)
         {

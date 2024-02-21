@@ -22,7 +22,7 @@ sealed class Array3 : ArrayBase
         InitializeArray();
     }
 
-    public override void InitializeArray()
+    protected override void InitializeArray()
     {
         for (int i = 0; i < array.Length; i++)
         {
@@ -61,7 +61,7 @@ sealed class Array3 : ArrayBase
         }
     }
 
-    public override void ArrUsInp()
+    protected override void ArrUsInp()
     {
         for (int i = 0; i < array.Length; i++)
         {
@@ -82,7 +82,7 @@ sealed class Array3 : ArrayBase
         }
     }
 
-    public override void ArrRand()
+    protected override void ArrRand()
     {
         for (int i = 0; i < array.Length; i++)
         {

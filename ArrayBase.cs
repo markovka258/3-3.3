@@ -1,11 +1,11 @@
 using System;
 public abstract class ArrayBase : IArray, IPrinter
 {
-    public abstract void InitializeArray();
+    protected abstract void InitializeArray();
 
-    public abstract void ArrUsInp();
+    protected abstract void ArrUsInp();
 
-    public abstract void ArrRand();
+    protected abstract void ArrRand();
 
     public abstract double GetAverage();
 
