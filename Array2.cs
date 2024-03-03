@@ -7,21 +7,6 @@ sealed class Array2 : ArrayBase
 
     public Array2()
     {
-        Console.Write("Enter the number of rows for the array2: ");
-        string rowsInput = Console.ReadLine();
-
-        Console.Write("Enter the number of columns for the array2: ");
-        string columnsInput = Console.ReadLine();
-
-        if (int.TryParse(rowsInput, out int rows) && int.TryParse(columnsInput, out int columns))
-        {
-            array = new int[rows, columns];
-        }
-        else
-        {
-            throw new ArgumentException("Invalid input for rows or columns");
-        }
-
         InitializeArray();
     }
 
@@ -30,27 +15,33 @@ sealed class Array2 : ArrayBase
         Console.Write("Enter 'true' for user input or 'false' for random input: ");
         string userInput = Console.ReadLine();
 
-        if (bool.TryParse(userInput, out bool isUserInput))
-        {
-            random = new Random();
+        bool.TryParse(userInput, out bool isUserInput);
+        
+        random = new Random();
 
-            if (isUserInput)
-            {
-                ArrUsInp();
-            }
-            else
-            {
-                ArrRand();
-            }
+        if (isUserInput)
+        {
+            ArrUsInp();
         }
         else
         {
-            throw new ArgumentException("Invalid input choice");
+            ArrRand();
         }
     }
 
     protected override void ArrUsInp()
     {
+        Console.Write("Enter the number of rows for the array2: ");
+        string rowsInput = Console.ReadLine();
+
+        Console.Write("Enter the number of columns for the array2: ");
+        string columnsInput = Console.ReadLine();
+
+        int.TryParse(rowsInput, out int rows); 
+        int.TryParse(columnsInput, out int columns);
+        
+        array = new int[rows, columns];
+
         for (int i = 0; i < array.GetLength(0); i++)
         {
             for (int j = 0; j < array.GetLength(1); j++)
@@ -72,6 +63,17 @@ sealed class Array2 : ArrayBase
 
     protected override void ArrRand()
     {
+        Console.Write("Enter the number of rows for the array2: ");
+        string rowsInput = Console.ReadLine();
+
+        Console.Write("Enter the number of columns for the array2: ");
+        string columnsInput = Console.ReadLine();
+
+        int.TryParse(rowsInput, out int rows); 
+        int.TryParse(columnsInput, out int columns);
+        
+        array = new int[rows, columns];
+        
         for (int i = 0; i < array.GetLength(0); i++)
         {
             for (int j = 0; j < array.GetLength(1); j++)

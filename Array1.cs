@@ -6,19 +6,7 @@ sealed class Array1 : ArrayBase
     private int[] _array;
 
     public Array1()
-    {
-        Console.Write("Enter the length of the array1: ");
-        string lengthInput = Console.ReadLine();
-
-        if (int.TryParse(lengthInput, out int length))
-        {
-            _array = new int[length];
-        }
-        else
-        {
-            throw new ArgumentException("Invalid length input");
-        }
-
+    {        
         InitializeArray();
     }
 
@@ -27,27 +15,30 @@ sealed class Array1 : ArrayBase
         Console.Write("Enter 'true' for user input or 'false' for random input: ");
         string userInput = Console.ReadLine();
 
-        if (bool.TryParse(userInput, out bool isUserInput))
-        {
-            random = new Random();
+        bool.TryParse(userInput, out bool isUserInput);
+        
+        random = new Random();
 
-            if (isUserInput)
-            {
-                ArrUsInp();
-            }
-            else
-            {
-                ArrRand();
-            }
+        if (isUserInput)
+        {
+            ArrUsInp();
         }
         else
         {
-            throw new ArgumentException("Invalid input choice");
+            ArrRand();
         }
     }
+    
 
     protected override void ArrUsInp()
     {
+        Console.Write("Enter the length of the array1: ");
+        string lengthInput = Console.ReadLine();
+
+        int.TryParse(lengthInput, out int length);
+        
+        _array = new int[length];
+
         Console.WriteLine($"Введите {_array.Length} чисел:");
 
         for (int i = 0; i < _array.Length; i++)
@@ -67,6 +58,13 @@ sealed class Array1 : ArrayBase
 
     protected override void ArrRand()
     {
+        Console.Write("Enter the length of the array1: ");
+        string lengthInput = Console.ReadLine();
+
+        int.TryParse(lengthInput, out int length);
+        
+        _array = new int[length];
+        
         for (int i = 0; i < _array.Length; i++)
         {
             _array[i] = random.Next(1, 101);

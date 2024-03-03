@@ -7,62 +7,37 @@ sealed class Array3 : ArrayBase
 
     public Array3()
     {
-        Console.Write("Enter the number of rows for the array3: ");
-        string rowsInput = Console.ReadLine();
-
-        if (int.TryParse(rowsInput, out int rows))
-        {
-            array = new int[rows][];
-        }
-        else
-        {
-            throw new ArgumentException("Invalid input for rows");
-        }
+        random = new Random();
 
         InitializeArray();
     }
 
     protected override void InitializeArray()
     {
-        for (int i = 0; i < array.Length; i++)
-        {
-            Console.Write($"Enter the number of columns for row {i + 1}: ");
-            string columnsInput = Console.ReadLine();
-
-            if (int.TryParse(columnsInput, out int columns))
-            {
-                array[i] = new int[columns];
-            }
-            else
-            {
-                throw new ArgumentException($"Invalid input for columns in row {i + 1}");
-            }
-        }
-
         Console.Write("Enter 'true' for user input or 'false' for random input: ");
         string userInput = Console.ReadLine();
 
-        if (bool.TryParse(userInput, out bool isUserInput))
+        bool.TryParse(userInput, out bool isUserInput);
+        
+        if (isUserInput)
         {
-            random = new Random();
-
-            if (isUserInput)
-            {
-                ArrUsInp();
-            }
-            else
-            {
-                ArrRand();
-            }
+            ArrUsInp();
         }
         else
         {
-            throw new ArgumentException("Invalid input choice");
+            ArrRand();
         }
     }
 
     protected override void ArrUsInp()
     {
+        Console.Write("Enter the number of rows for the array3: ");
+        string rowsInput = Console.ReadLine();
+
+        int.TryParse(rowsInput, out int rows);
+        
+        array = new int[rows][];
+
         for (int i = 0; i < array.Length; i++)
         {
             for (int j = 0; j < array[i].Length; j++)
@@ -84,6 +59,13 @@ sealed class Array3 : ArrayBase
 
     protected override void ArrRand()
     {
+        Console.Write("Enter the number of rows for the array3: ");
+        string rowsInput = Console.ReadLine();
+
+        int.TryParse(rowsInput, out int rows);
+        
+        array = new int[rows][];
+        
         for (int i = 0; i < array.Length; i++)
         {
             for (int j = 0; j < array[i].Length; j++)
