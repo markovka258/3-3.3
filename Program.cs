@@ -26,7 +26,6 @@ internal class Program
                 {
                     Console.WriteLine($"Массив {array1.GetType()} с удаленными дубликатами");
                     array.Print();
-
                 }
 
                 if (array is Array2 array2)

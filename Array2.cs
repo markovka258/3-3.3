@@ -116,7 +116,6 @@ sealed class Array2 : ArrayBase
 
     public override void Print()
     {
-        int[,] ar = array;
         int rows = array.GetLength(0);
         int columns = array.GetLength(1);
 

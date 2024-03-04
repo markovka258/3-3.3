@@ -14,20 +14,7 @@ sealed class Array1 : ArrayBase
 
     protected override void InitializeArray()
     {
-        Console.Write("Enter 'true' for user input or 'false' for random input: ");
-        string userInput = Console.ReadLine();
-
-        bool.TryParse(userInput, out bool isUserInput);
-        
-
-        if (isUserInput)
-        {
-            ArrUsInp();
-        }
-        else
-        {
-            ArrRand();
-        }
+       
     }
     
 
