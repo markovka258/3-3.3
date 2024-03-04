@@ -68,6 +68,8 @@ sealed class Array3 : ArrayBase
         
         for (int i = 0; i < array.Length; i++)
         {
+            array[i] = new int[random.Next(1, 10)];
+
             for (int j = 0; j < array[i].Length; j++)
             {
                 array[i][j] = random.Next(1, 101);

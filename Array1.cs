@@ -7,6 +7,8 @@ sealed class Array1 : ArrayBase
 
     public Array1()
     {        
+        random = new Random();
+        
         InitializeArray();
     }
 
@@ -17,7 +19,6 @@ sealed class Array1 : ArrayBase
 
         bool.TryParse(userInput, out bool isUserInput);
         
-        random = new Random();
 
         if (isUserInput)
         {

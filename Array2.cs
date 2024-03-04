@@ -7,26 +7,14 @@ sealed class Array2 : ArrayBase
 
     public Array2()
     {
+        random = new Random();
+
         InitializeArray();
     }
 
     protected override void InitializeArray()
     {
-        Console.Write("Enter 'true' for user input or 'false' for random input: ");
-        string userInput = Console.ReadLine();
-
-        bool.TryParse(userInput, out bool isUserInput);
         
-        random = new Random();
-
-        if (isUserInput)
-        {
-            ArrUsInp();
-        }
-        else
-        {
-            ArrRand();
-        }
     }
 
     protected override void ArrUsInp()
@@ -128,6 +116,7 @@ sealed class Array2 : ArrayBase
 
     public override void Print()
     {
+        int[,] ar = array;
         int rows = array.GetLength(0);
         int columns = array.GetLength(1);
 
