@@ -123,7 +123,11 @@ sealed class Array1 : ArrayBase
 
     public override void Print()
     {
-        Console.WriteLine(string.Join(" ", _array));
+        foreach (int value in _array)
+        {
+            Console.Write(value + " ");
+        }
+        Console.WriteLine();
     }
 
 }
