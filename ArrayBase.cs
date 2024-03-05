@@ -1,6 +1,14 @@
 using System;
 public abstract class ArrayBase : IArray, IPrinter
 {
+    
+    private Random random;
+
+    public ArrayBase()
+    {
+        InitializeArray();
+    }
+
     protected virtual void InitializeArray()
     {
         Console.Write("Enter 'true' for user input or 'false' for random input: ");

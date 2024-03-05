@@ -5,14 +5,12 @@ sealed class Array2 : ArrayBase
     private Random random;
     private int[,] array;
 
-    public Array2()
-    {
-        random = new Random();
+    public Array2() : base()
+    {        
 
-        InitializeArray();
     }
 
-    protected override void InitializeArray()
+    protected void InitializeArray()
     {
         
     }
@@ -51,6 +49,8 @@ sealed class Array2 : ArrayBase
 
     protected override void ArrRand()
     {
+        random = new Random();
+        
         Console.Write("Enter the number of rows for the array2: ");
         string rowsInput = Console.ReadLine();
 
